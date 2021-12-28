@@ -47,9 +47,10 @@ func (l *linkedList)AddToTail(info interface{}) *linkedList {
 	if l.Tail == nil{
 		l.Head = newNode
 		l.Tail = newNode
+	}else {
+		l.Tail.next = newNode
+		l.Tail = l.Tail.next
 	}
-	l.Tail.next = newNode
-	l.Tail = l.Tail.next
 	// 链表长度+1
 	l.len++
 	return l
@@ -62,9 +63,10 @@ func (l *linkedList)AddToHead(info interface{}) *linkedList  {
 	if l.Head == nil{
 		l.Head = newNode
 		l.Tail = newNode
+	}else {
+		newNode.next = l.Head
+		l.Head = newNode
 	}
-	newNode.next = l.Head
-	l.Head = newNode
 	// 链表长度+1
 	l.len++
 	return  l
@@ -408,7 +410,7 @@ func (l *linkedList)QuireIndex(index int) interface{} {
 	return nil
 }
 
-func NewLinkerList()*linkedList{
+func NewLinkedList()*linkedList{
 	// 创建的链表头尾节点都为空
 	return &linkedList{
 		Head: nil,
