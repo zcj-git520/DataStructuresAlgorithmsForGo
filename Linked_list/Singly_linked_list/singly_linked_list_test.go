@@ -6,7 +6,7 @@ import (
 )
 
 func TestLinkedList_AddToHead(t *testing.T) {
-	newList := NewLinkerList()
+	newList := NewLinkedList()
 	fmt.Println("list len is:", newList.Len())
 	newList.AddToHead("stop")
 	newList.AddToHead("2")
@@ -22,7 +22,7 @@ func TestLinkedList_AddToHead(t *testing.T) {
 }
 
 func TestLinkedList_AddToTail(t *testing.T) {
-	newList := NewLinkerList()
+	newList := NewLinkedList()
 	newList.AddToTail("s1")
 	//newList.AddToTail("2")
 	//newList.AddToTail("3")
@@ -41,8 +41,8 @@ func TestLinkedList_AddToTail(t *testing.T) {
 }
 
 func TestLinkedList_AddListToHead(t *testing.T) {
-	newList1 := NewLinkerList()
-	newList2 := NewLinkerList()
+	newList1 := NewLinkedList()
+	newList2 := NewLinkedList()
 	newList1.AddToTail(1)
 	newList1.AddToTail(2)
 	newList1.AddToTail(3)
@@ -55,8 +55,8 @@ func TestLinkedList_AddListToHead(t *testing.T) {
 }
 
 func TestLinkedList_AddListToTail(t *testing.T) {
-	newList1 := NewLinkerList()
-	newList2 := NewLinkerList()
+	newList1 := NewLinkedList()
+	newList2 := NewLinkedList()
 	newList1.AddToTail(1)
 	newList1.AddToTail(2)
 	newList1.AddToTail(3)
@@ -66,7 +66,7 @@ func TestLinkedList_AddListToTail(t *testing.T) {
 	newList3 := newList1.AddListToTail(newList2)
 	newList3.QuireAll()
 	fmt.Println("list len is:", newList3.Len())
-	newList4 := NewLinkerList()
+	newList4 := NewLinkedList()
 	newList4.AddToTail(7)
 	newList4.AddToTail(8)
 	newList4.AddToTail(9)
@@ -77,8 +77,8 @@ func TestLinkedList_AddListToTail(t *testing.T) {
 }
 
 func TestLinkedList_AddListToIndex(t *testing.T) {
-	newList1 := NewLinkerList()
-	newList2 := NewLinkerList()
+	newList1 := NewLinkedList()
+	newList2 := NewLinkedList()
 	newList1.AddToTail(1)
 	newList1.AddToTail(2)
 	newList1.AddToTail(3)
@@ -91,7 +91,7 @@ func TestLinkedList_AddListToIndex(t *testing.T) {
 }
 
 func TestLinkedList_AddToIndex(t *testing.T) {
-	newList := NewLinkerList()
+	newList := NewLinkedList()
 	fmt.Println("list len is:", newList.Len())
 	newList.AddToTail(0)
 	newList.AddToTail(2)
@@ -109,7 +109,7 @@ func TestLinkedList_AddToIndex(t *testing.T) {
 }
 
 func TestLinkedList_DeleteToAValue(t *testing.T) {
-	newList := NewLinkerList()
+	newList := NewLinkedList()
 	newList.AddToTail(1)
 	newList.AddToTail(3)
 	newList.AddToTail(3)
@@ -126,7 +126,7 @@ func TestLinkedList_DeleteToAValue(t *testing.T) {
 }
 
 func TestLinkedList_DeleteToValue(t *testing.T) {
-	newList := NewLinkerList()
+	newList := NewLinkedList()
 	newList.AddToTail(1)
 	newList.AddToTail(3)
 	newList.AddToTail(3)
@@ -144,7 +144,7 @@ func TestLinkedList_DeleteToValue(t *testing.T) {
 }
 
 func TestLinkedList_DeleteToIndex(t *testing.T) {
-	newList := NewLinkerList()
+	newList := NewLinkedList()
 	newList.AddToTail(0)
 	newList.AddToTail(1)
 	newList.AddToTail(2)
@@ -164,7 +164,7 @@ func TestLinkedList_DeleteToIndex(t *testing.T) {
 }
 
 func TestLinkedList_QuireValue(t *testing.T) {
-	newList := NewLinkerList()
+	newList := NewLinkedList()
 	newList.AddToTail(1)
 	newList.AddToTail(2)
 	newList.AddToTail(3)
@@ -175,7 +175,7 @@ func TestLinkedList_QuireValue(t *testing.T) {
 }
 
 func TestLinkedList_QuireIndex(t *testing.T) {
-	newList := NewLinkerList()
+	newList := NewLinkedList()
 	newList.AddToTail(0)
 	newList.AddToTail(1)
 	newList.AddToTail(2)

@@ -19,7 +19,7 @@ type doubleLinkedNode struct {
 }
 
 // 双向链表定义
-type doubleList struct {
+type DoubleList struct {
 	Head *doubleLinkedNode   // 头节点
 	Tail *doubleLinkedNode   // 尾节点
 	len  int                 // 链表长度
@@ -35,7 +35,7 @@ func createNode(data interface{}) *doubleLinkedNode {
 }
 
 // 链表的长度
-func(d *doubleList)Len() int{
+func(d *DoubleList)Len() int{
 	return d.len
 }
 
@@ -43,7 +43,7 @@ func(d *doubleList)Len() int{
 单个节点的插入
 */
 // 链表的尾插法
-func (d *doubleList)AddToTail(info interface{}) *doubleList {
+func (d *DoubleList)AddToTail(info interface{}) *DoubleList {
 	newNode := createNode(info)  // 创建新节点
 	// 链表为空, 头尾节点都指向该节点
 	if d.Head == nil{
@@ -60,7 +60,7 @@ func (d *doubleList)AddToTail(info interface{}) *doubleList {
 }
 
 // 链表的头插法
-func (d *doubleList)AddToHead(info interface{}) *doubleList  {
+func (d *DoubleList)AddToHead(info interface{}) *DoubleList  {
 	newNode := createNode(info)  // 创建节点
 	// 链表为空
 	if d.Head == nil{
@@ -80,7 +80,7 @@ func (d *doubleList)AddToHead(info interface{}) *doubleList  {
 // 通过index=>插入链表新的节点
 // index为正数 为从左->右 // 0表示第一个节点
 // index为负数 为从右->左 // -1表示第一个节点
-func (d *doubleList)AddToIndex(index int, info interface{}) *doubleList {
+func (d *DoubleList)AddToIndex(index int, info interface{}) *DoubleList {
 	// 当链表为空时，采用了尾插入法插入数据
 	if d.Head == nil{
 		return d.AddToTail(info)
@@ -123,7 +123,7 @@ func (d *doubleList)AddToIndex(index int, info interface{}) *doubleList {
 链表的合并
 */
 // 将新的链表插入头部
-func (d *doubleList)AddListToHead(list *doubleList)*doubleList{
+func (d *DoubleList)AddListToHead(list *DoubleList)*DoubleList{
 	// 两个链表都为空时
 	if d.Head == nil && list.Head == nil{
 		return d
@@ -146,7 +146,7 @@ func (d *doubleList)AddListToHead(list *doubleList)*doubleList{
 }
 
 // 将新的链表插入到尾部
-func (d *doubleList)AddListToTail(list *doubleList)*doubleList{
+func (d *DoubleList)AddListToTail(list *DoubleList)*DoubleList{
 	// 两个链表都为空时
 	if d.Head == nil && list.Head == nil{
 		return d
@@ -168,7 +168,7 @@ func (d *doubleList)AddListToTail(list *doubleList)*doubleList{
 }
 
 // 经新的表插入到index
-func (d *doubleList)AddListToIndex(index int, list *doubleList) *doubleList {
+func (d *DoubleList)AddListToIndex(index int, list *DoubleList) *DoubleList {
 	// 两个链表都为空时
 	if d.Head == nil && list.Head == nil{
 		return d
@@ -210,7 +210,7 @@ func (d *doubleList)AddListToIndex(index int, list *doubleList) *doubleList {
 }
 
 // 链表头删除法
-func (d *doubleList)DeleteToHead()*doubleList{
+func (d *DoubleList)DeleteToHead()*DoubleList{
 	// 链表为空
 	if d.Head == nil{
 		return d
@@ -230,7 +230,7 @@ func (d *doubleList)DeleteToHead()*doubleList{
 }
 
 // 链表尾删除法
-func (d *doubleList)DeleteToTail()*doubleList{
+func (d *DoubleList)DeleteToTail()*DoubleList{
 	// 链表为空
 	if d.Tail == nil{
 		return d
@@ -250,7 +250,7 @@ func (d *doubleList)DeleteToTail()*doubleList{
 }
 
 // 通过值=>删除链表的节点(第一个)
-func (d *doubleList)DeleteToAValue(value interface{})*doubleList{
+func (d *DoubleList)DeleteToAValue(value interface{})*DoubleList{
 	// 链表为空
 	if d.Head == nil{
 		fmt.Println("链表为空")
@@ -279,7 +279,7 @@ func (d *doubleList)DeleteToAValue(value interface{})*doubleList{
 }
 
 // 通过值=>删除链表的节点(所有)
-func (d *doubleList)DeleteToValue(value interface{})*doubleList{
+func (d *DoubleList)DeleteToValue(value interface{})*DoubleList{
 	// 链表为空
 	if d.Head == nil{
 		fmt.Println("链表为空")
@@ -316,7 +316,7 @@ func (d *doubleList)DeleteToValue(value interface{})*doubleList{
 // 通过index=>删除链表的节点
 // index为正数 为从左->右 // 0表示第一个节点
 // index为负数 为从右->左 // -1表示第一个节点
-func (d *doubleList)DeleteToIndex(index int)*doubleList{
+func (d *DoubleList)DeleteToIndex(index int)*DoubleList{
 	// 链表为空
 	if d.Head == nil{
 		fmt.Println("链表为空")
@@ -352,7 +352,7 @@ func (d *doubleList)DeleteToIndex(index int)*doubleList{
 }
 
 // 遍历链表
-func (d *doubleList) QuireAll() {
+func (d *DoubleList) QuireAll() {
 	if d.Head == nil{
 		fmt.Println("链表数据为空")
 		return
@@ -371,7 +371,7 @@ func (d *doubleList) QuireAll() {
 }
 
 // 判断valve是否存在
-func (d *doubleList)QuireValue(value interface{}) bool{
+func (d *DoubleList)QuireValue(value interface{}) bool{
 	// 表为空
 	if d.Head == nil{
 		return false
@@ -393,7 +393,7 @@ func (d *doubleList)QuireValue(value interface{}) bool{
 }
 
 // 根据索引返回值
-func (d *doubleList)QuireIndex(index int) interface{} {
+func (d *DoubleList)QuireIndex(index int) interface{} {
 	// 链表为空
 	if d.Head == nil{
 		return nil
@@ -422,9 +422,9 @@ func (d *doubleList)QuireIndex(index int) interface{} {
 	return nil
 }
 
-func NewDoubleLinkedList()*doubleList{
+func NewDoubleLinkedList()*DoubleList{
 	// 创建的链表头尾节点都为空
-	return &doubleList{
+	return &DoubleList{
 		Head: nil,
 		Tail: nil,
 		len: 0,
