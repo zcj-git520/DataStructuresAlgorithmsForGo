@@ -42,7 +42,7 @@ func (q *queueData)ShowQueue() {
 	q.list.QuireAll()
 }
 
-// 创建栈
+// 创建队列
 func NewQueueData()*queueData{
 	return  &queueData{list:double_linked_list.NewDoubleLinkedList()}
 }
