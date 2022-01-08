@@ -16,3 +16,7 @@
 * 栈实现路径：\stack_queue\stack
 #### queue
 * 队列实现路径：\stack_queue\queue
+
+### 树
+#### binary_search_tree
+* 二叉查找树的路径：\tree\binary_search_tree
