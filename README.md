@@ -20,3 +20,5 @@
 ### 树
 #### binary_search_tree
 * 二叉查找树的路径：\tree\binary_search_tree
+* 二叉树- 平衡树的实现: \tree\AVL_tree
+* 前缀树- 称字典树:\tree\Trie
